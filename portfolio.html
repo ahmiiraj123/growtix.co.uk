@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Growtix Portfolio</title>
+  <meta name="description" content="Full portfolio view for Growtix web design, graphic design, and video edits." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">G</span>
+        <span class="logo-text">Growtix</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="#web">Web</a>
+        <a href="#graphics">Graphics</a>
+        <a href="#video">Video</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap reveal">
+        <span class="pill">Portfolio library</span>
+        <h1>Everything in one place.</h1>
+        <p>Switch between categories and show clients only the work they need to see.</p>
+
+        <div class="tabs">
+          <button class="tab active" data-filter="all">All</button>
+          <button class="tab" data-filter="web">Web</button>
+          <button class="tab" data-filter="graphics">Graphics</button>
+          <button class="tab" data-filter="video">Video</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pt-0" id="web">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <span class="pill">Web portfolio</span>
+          <h2>Website builds and landing pages</h2>
+        </div>
+
+        <div class="grid-2">
+          <article class="portfolio-item reveal" data-category="web">
+            <div class="portfolio-tag">Website</div>
+            <h3>Sahara Grill concept</h3>
+            <p>Restaurant-focused redesign with stronger hierarchy and clearer actions.</p>
+            <a href="view.html?id=sahara" class="link">Open preview →</a>
+          </article>
+
+          <article class="portfolio-item reveal" data-category="web">
+            <div class="portfolio-tag">Landing page</div>
+            <h3>Agency conversion page</h3>
+            <p>Premium one-page layout made to sell a service quickly.</p>
+            <a href="view.html?id=web-one" class="link">Open preview →</a>
+          </article>
+
+          <article class="portfolio-item reveal" data-category="web">
+            <div class="portfolio-tag">Business site</div>
+            <h3>Local service website</h3>
+            <p>Simple structure for trust, speed, and clean presentation.</p>
+            <a href="view.html?id=web-two" class="link">Open preview →</a>
+          </article>
+
+          <article class="portfolio-item reveal" data-category="web">
+            <div class="portfolio-tag">Homepage</div>
+            <h3>Studio homepage</h3>
+            <p>Modern brand layout with strong visual rhythm and spacing.</p>
+            <a href="view.html?id=web-three" class="link">Open preview →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="graphics">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <span class="pill">Graphic portfolio</span>
+          <h2>Branding and social visuals</h2>
+        </div>
+
+        <div class="grid-2">
+          <article class="portfolio-item reveal" data-category="graphics">
+            <div class="portfolio-tag">Identity</div>
+            <h3>Growtix logo concept</h3>
+            <p>A sharp minimal mark with clean startup energy.</p>
+            <a href="view.html?id=graphic-one" class="link">Open preview →</a>
+          </article>
+
+          <article class="portfolio-item reveal" data-category="graphics">
+            <div class="portfolio-tag">Social post</div>
+            <h3>Instagram content set</h3>
+            <p>Designed to look consistent across a modern feed.</p>
+            <a href="view.html?id=graphic-two" class="link">Open preview →</a>
+          </article>
+
+          <article class="portfolio-item reveal" data-category="graphics">
+            <div class="portfolio-tag">Flyer</div>
+            <h3>Promo flyer</h3>
+            <p>Bold composition for local campaigns and promotions.</p>
+            <a href="view.html?id=graphic-three" class="link">Open preview →</a>
+          </article>
+
+          <article class="portfolio-item reveal" data-category="graphics">
+            <div class="portfolio-tag">Menu</div>
+            <h3>Restaurant menu layout</h3>
+            <p>Readable, premium menu design for a better customer experience.</p>
+            <a href="view.html?id=graphic-four" class="link">Open preview →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="video">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <span class="pill">Video portfolio</span>
+          <h2>Short-form edits and promotional content</h2>
+        </div>
+
+        <div class="grid-2">
+          <article class="portfolio-item reveal" data-category="video">
+            <div class="portfolio-tag">Reel</div>
+            <h3>Food promo reel</h3>
+            <p>Fast cuts and energetic pacing for social media attention.</p>
+            <a href="view.html?id=video-one" class="link">Open preview →</a>
+          </article>
+
+          <article class="portfolio-item reveal" data-category="video">
+            <div class="portfolio-tag">Ad</div>
+            <h3>Business promo clip</h3>
+            <p>Simple short ad designed to sell a service or offer.</p>
+            <a href="view.html?id=video-two" class="link">Open preview →</a>
+          </article>
+
+          <article class="portfolio-item reveal" data-category="video">
+            <div class="portfolio-tag">Brand film</div>
+            <h3>Brand story edit</h3>
+            <p>Clean visual storytelling for a premium business feel.</p>
+            <a href="view.html?id=video-three" class="link">Open preview →</a>
+          </article>
+
+          <article class="portfolio-item reveal" data-category="video">
+            <div class="portfolio-tag">Promo</div>
+            <h3>Offer announcement</h3>
+            <p>Short motion edit created for quick reach and awareness.</p>
+            <a href="view.html?id=video-four" class="link">Open preview →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Growtix Preview</title>
+  <meta name="description" content="Preview a selected Growtix project inside an iframe." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="viewer-body">
+  <div class="viewer-shell">
+    <header class="viewer-header">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">G</span>
+        <span class="logo-text">Growtix Preview</span>
+      </a>
+
+      <div class="viewer-actions">
+        <a class="btn btn-ghost" href="index.html">Back to website</a>
+        <a class="btn btn-primary" href="portfolio.html">All portfolios</a>
+      </div>
+    </header>
+
+    <section class="viewer-meta">
+      <div>
+        <span class="pill" id="projectType">Project</span>
+        <h1 id="projectTitle">Preview</h1>
+        <p id="projectDesc">Loading project preview.</p>
+      </div>
+
+      <div class="viewer-path">
+        <label for="projectPicker">Choose project</label>
+        <select id="projectPicker"></select>
+      </div>
+    </section>
+
+    <div class="viewer-frame-wrap">
+      <iframe id="previewFrame" title="Project preview"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const projects = {
+      sahara: {
+        title: "Sahara Grill Concept",
+        type: "Web",
+        desc: "Restaurant website concept preview.",
+        url: "https://example.com"
+      },
+      "web-one": {
+        title: "Agency Conversion Page",
+        type: "Web",
+        desc: "Landing page preview.",
+        url: "https://example.com"
+      },
+      "web-two": {
+        title: "Local Service Website",
+        type: "Web",
+        desc: "Business site preview.",
+        url: "https://example.com"
+      },
+      "web-three": {
+        title: "Studio Homepage",
+        type: "Web",
+        desc: "Homepage concept preview.",
+        url: "https://example.com"
+      },
+      "graphic-one": {
+        title: "Growtix Logo Concept",
+        type: "Graphic",
+        desc: "Identity preview.",
+        url: "https://example.com"
+      },
+      "graphic-two": {
+        title: "Instagram Content Set",
+        type: "Graphic",
+        desc: "Social visuals preview.",
+        url: "https://example.com"
+      },
+      "graphic-three": {
+        title: "Promo Flyer",
+        type: "Graphic",
+        desc: "Flyer preview.",
+        url: "https://example.com"
+      },
+      "graphic-four": {
+        title: "Restaurant Menu Layout",
+        type: "Graphic",
+        desc: "Menu preview.",
+        url: "https://example.com"
+      },
+      "video-one": {
+        title: "Food Promo Reel",
+        type: "Video",
+        desc: "Short-form food edit preview.",
+        url: "https://example.com"
+      },
+      "video-two": {
+        title: "Business Promo Clip",
+        type: "Video",
+        desc: "Promo ad preview.",
+        url: "https://example.com"
+      },
+      "video-three": {
+        title: "Brand Story Edit",
+        type: "Video",
+        desc: "Storytelling video preview.",
+        url: "https://example.com"
+      },
+      "video-four": {
+        title: "Offer Announcement",
+        type: "Video",
+        desc: "Awareness edit preview.",
+        url: "https://example.com"
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id") || "sahara";
+
+    const titleEl = document.getElementById("projectTitle");
+    const typeEl = document.getElementById("projectType");
+    const descEl = document.getElementById("projectDesc");
+    const frame = document.getElementById("previewFrame");
+    const picker = document.getElementById("projectPicker");
+
+    Object.entries(projects).forEach(([key, item]) => {
+      const option = document.createElement("option");
+      option.value = key;
+      option.textContent = item.title;
+      picker.appendChild(option);
+    });
+
+    function loadProject(projectId) {
+      const project = projects[projectId] || projects.sahara;
+      titleEl.textContent = project.title;
+      typeEl.textContent = project.type;
+      descEl.textContent = project.desc;
+      frame.src = project.url;
+      picker.value = projectId in projects ? projectId : "sahara";
+      history.replaceState(null, "", `view.html?id=${picker.value}`);
+    }
+
+    picker.addEventListener("change", () => loadProject(picker.value));
+    loadProject(id);
+  </script>
+</body>
+</html>
